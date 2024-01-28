@@ -1,0 +1,24 @@
+<button (click)="getData()">Get Data</button>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for ( item of mydata;track item) {
+      <tr>
+        <td><div>{{ item.productid }}</div></td>
+        <td><div>{{ item.title }}</div></td>
+        <td><div>{{ item.price }}</div></td>
+        <td><div>{{ item.description }}</div></td>
+        <td><a href="">details</a></td>
+      </tr>
+    }
+  </tbody>
+</table>
+<app-product></app-product>

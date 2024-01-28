@@ -1,0 +1,22 @@
+<form class="form" [formGroup]="reactiveForm" (ngSubmit)="unsubscribe()" name="myform1">
+    <div class="column">
+        <div class="input-box">
+            <input type="text" placeholder="Enter ID" formControlName="productId" />
+            <input type="submit" value="GetProduct" class="submit-btn">
+        </div>
+    </div>
+</form>
+@for(item of productData;track item){
+<div >
+    <h3>Product Details</h3>
+    <p><strong>Product ID:</strong> {{ item.productId }}</p>
+    <p><strong>Title:</strong> {{ item.title }}</p>
+    <p><strong>Price:</strong> {{ item.price }}</p>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <form class="form" [formGroup]="reactiveForm1" (ngSubmit)="buyProduct()" name="myform12">
+    <input type="submit" value="Buy" class="submit-btn"></form>
+    @if(item.boughtMessage) {
+        <p class="success-message"> {{ item.boughtMessage }} </p>
+      }
+  </div>}
+ 
